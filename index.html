@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmad Mustafa — Software Engineer</title>
-<meta name="description" content="Ahmad Mustafa — Full-Stack & AI/ML Software Engineer">
+<meta name="description" content="Ahmad Mustafa — Software Engineer specializing in full-stack development, SaaS, backend systems, APIs, and AI/ML">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -340,7 +340,68 @@
     .section{ padding: 100px 6vw; }
     footer{ flex-direction:column; gap:16px; text-align:center; }
   }
+
+  /* ---------- Experience / Process / Education ---------- */
+  .timeline{display:grid;gap:22px;}
+  .timeline-card{
+    background:var(--panel); border:1px solid var(--border); border-radius:16px;
+    padding:32px; backdrop-filter:blur(10px);
+    transition:transform .35s ease,border-color .35s ease;
+  }
+  .timeline-card:hover{transform:translateY(-5px);border-color:rgba(255,47,176,0.45);}
+  .timeline-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px;}
+  .timeline-role{font-family:var(--disp);font-size:1.45rem;font-weight:600;}
+  .timeline-company{font-family:var(--mono);font-size:12px;color:var(--cyan);margin-top:6px;}
+  .timeline-date{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap;}
+  .timeline-card p,.timeline-card li{color:var(--muted);line-height:1.75;font-size:.95rem;}
+  .timeline-card ul{padding-left:20px;display:grid;gap:7px;margin-top:14px;}
+
+  .process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .process-card{
+    background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:24px;
+    backdrop-filter:blur(10px);transition:transform .3s ease,border-color .3s ease;
+  }
+  .process-card:hover{transform:translateY(-4px);border-color:rgba(47,182,255,.45);}
+  .process-card .process-num{font-family:var(--mono);font-size:12px;color:var(--cyan);margin-bottom:20px;}
+  .process-card h3{font-family:var(--disp);font-size:1.08rem;margin-bottom:10px;}
+  .process-card p{color:var(--muted);font-size:.9rem;line-height:1.65;}
+
+  .education-card{
+    display:flex;justify-content:space-between;gap:30px;align-items:center;
+    background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:30px;
+    backdrop-filter:blur(10px);
+  }
+  .education-card h3{font-family:var(--disp);font-size:1.3rem;margin-bottom:8px;}
+  .education-card p{color:var(--muted);line-height:1.6;}
+  .education-card .edu-date{font-family:var(--mono);font-size:12px;color:var(--cyan);white-space:nowrap;}
+
+  .project-filters{display:flex;flex-wrap:wrap;gap:10px;margin:-34px 0 32px;}
+  .filter-btn{
+    font-family:var(--mono);font-size:11px;color:var(--muted);background:transparent;
+    border:1px solid var(--border);padding:8px 13px;border-radius:20px;cursor:pointer;
+    transition:all .25s ease;
+  }
+  .filter-btn:hover,.filter-btn.active{color:var(--text);border-color:var(--cyan);background:rgba(47,182,255,.07);}
+  .project-card.hidden{display:none;}
+
+  .project-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+  .project-actions a{
+    font-family:var(--mono);font-size:11px;text-decoration:none;color:var(--text);
+    border:1px solid var(--border);padding:7px 11px;border-radius:6px;transition:all .25s ease;
+  }
+  .project-actions a:hover{color:var(--cyan);border-color:var(--cyan);}
+
+  @media (max-width:980px){
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:720px){
+    .process-grid{grid-template-columns:1fr;}
+    .timeline-top,.education-card{flex-direction:column;align-items:flex-start;}
+    .project-filters{margin:-20px 0 28px;}
+  }
+
 </style>
+  <!-- Place your latest resume PDF in the same folder as this HTML and name it Ahmad_Mustafa_Resume.pdf -->
 </head>
 <body>
 
@@ -355,9 +416,11 @@
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="Ahmad_Mustafa_Resume.pdf" target="_blank" rel="noopener"><span>Resume</span> ↗</a></li>
     </ul>
   </nav>
 </header>
@@ -369,10 +432,10 @@
     <div class="eyebrow">Software Engineer</div>
     <h1 class="title">Ahmad <span class="grad">Mustafa</span></h1>
     <div class="role-line"><span class="bracket">&lt;</span><span id="typed"></span><span class="cursor"></span><span class="bracket">/&gt;</span></div>
-    <p class="hero-sub">Software Engineer | Full-Stack Development | SaaS | AI/ML \nI build production-focused software, SaaS platforms, and AI-powered systems that solve real business and engineering problems.</p>
+    <p class="hero-sub">I build full-stack applications, SaaS platforms, APIs, and AI-powered systems that turn complex requirements into reliable, practical software.<br>From backend architecture and databases to intelligent applications and user-facing products, I enjoy taking ideas from concept to a working solution.</p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects →</a>
-      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      <a href="Ahmad_Mustafa_Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download Resume ↗</a>
     </div>
     <div class="scroll-hint"><div class="line"></div> SCROLL</div>
   </section>
@@ -386,9 +449,10 @@
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I'm <strong>Ahmad Mustafa</strong>, a software engineer who works across the stack from <strong>full-stack development</strong> to <strong>AI/ML systems</strong>. I enjoy the full journey of building software: shaping an idea, architecting the system, and shipping something people actually use.</p>
-        <p>My core toolkit is <strong>Python</strong> and modern web technologies.I am experienced in CMS like Wordpress , Shopify , Wix and WooCommerce.I thrive on solving complex problems.I also bring a less common skill to engineering teams: building <strong>sales funnels</strong> which means I understand not just how to build a product, but how it converts and grows.I enjoy exploring new technologies, contributing to open-source projects, and learning about strategies to improve user experiences.</p>
-        <p>I care about clean architecture, readable code, and shipping things that hold up under real-world use not just demos.</p>
+        <p>I'm <strong>Ahmad Mustafa</strong>,a Software Engineer focused on building practical software across <strong>full stack development, backend systems, SaaS, APIs, and AI/ML</strong>.</p>
+        <p>I enjoy working through the complete engineering process understanding a problem, designing the architecture, developing the system, working with data and APIs, and turning the final idea into something people can actually use.</p>
+        <p>My experience includes developing <strong>SaaS-based business software, commercial ERP systems, REST APIs, computer-vision applications, machine-learning solutions, e-commerce platforms,</strong> and <strong>custom web applications</strong>.</p>
+        <p>I approach development with a strong focus on problem solving, maintainable code, practical architecture, and continuous learning. I'm particularly interested in software engineering, intelligent systems, automation, and technologies that can solve real-world problems.</p>
       </div>
       <div class="terminal reveal">
         <div class="terminal-bar">
@@ -399,10 +463,12 @@
 <div>{</div>
 <div>&nbsp;&nbsp;<span class="key">"name"</span>: <span class="str">"Ahmad Mustafa"</span>,</div>
 <div>&nbsp;&nbsp;<span class="key">"role"</span>: <span class="str">"Software Engineer"</span>,</div>
-<div>&nbsp;&nbsp;<span class="key">"focus"</span>: [<span class="str">"Backend Development"</span>, <span class="str">"AI/ML"</span>,<span class="str">"Web"</span>],</div>
-<div>&nbsp;&nbsp;<span class="key">"languages"</span>: [<span class="str">"Python"</span>, <span class="str">"C++"</span>, <span class="str">"JS"</span>, <span class="str">"Bootstrap"</span>],</div>
+<div>&nbsp;&nbsp;<span class="key">"focus"</span>: [<span class="str">"Full-Stack Development"</span>, <span class="str">"Backend Engineering"</span>, <span class="str">"SaaS"</span>, <span class="str">"AI/ML"</span>],</div>
+<div>&nbsp;&nbsp;<span class="key">"languages"</span>: [<span class="str">"Python"</span>, <span class="str">"C++"</span>, <span class="str">"JavaScript"</span>, <span class="str">"PHP"</span>],</div>
+<div>&nbsp;&nbsp;<span class="key">"backend"</span>: [<span class="str">"Node.js"</span>, <span class="str">"Laravel"</span>, <span class="str">"REST APIs"</span>],</div>
 <div>&nbsp;&nbsp;<span class="key">"database"</span>: <span class="str">"MySQL"</span>,</div>
-<div>&nbsp;&nbsp;<span class="key">"extra"</span>: <span class="str">"Sales Funnel"</span>, <span class="str">"Wordpress"</span>, <span class="str">"E-Commerce"</span>,</div>
+<div>&nbsp;&nbsp;<span class="key">"ai_ml"</span>: [<span class="str">"PyTorch"</span>, <span class="str">"OpenCV"</span>, <span class="str">"YOLO"</span>],</div>
+<div>&nbsp;&nbsp;<span class="key">"extra"</span>: [<span class="str">"WordPress"</span>, <span class="str">"E-Commerce"</span>, <span class="str">"Sales Funnels"</span>],</div>
 <div>&nbsp;&nbsp;<span class="key">"status"</span>: <span class="val">open_to_work</span></div>
 <div>}</div>
         </div>
@@ -410,49 +476,125 @@
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-head reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
+      <article class="timeline-card reveal">
+        <div class="timeline-top">
+          <div>
+            <div class="timeline-role">Software Engineer</div>
+            <div class="timeline-company">SAR ZONE SMC PVT</div>
+          </div>
+          <div class="timeline-date">2026 — Present</div>
+        </div>
+        <p>Working across software development and business applications, with a focus on practical systems, web-based products, SaaS, APIs, databases, and modern development workflows.</p>
+        <ul>
+          <li>Develop full-stack applications and business-oriented software.</li>
+          <li>Work with backend technologies, databases, APIs, and modern web technologies.</li>
+          <li>Build and maintain SaaS-based applications and internal business systems.</li>
+          <li>Translate business requirements into functional technical solutions.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
   <!-- SKILLS -->
   <section class="section" id="skills">
     <div class="section-head reveal">
-      <span class="section-num">03</span>
+      <span class="section-num">04</span>
       <h2 class="section-title">Skills & Stack</h2>
       <div class="section-line"></div>
     </div>
     <div class="skills-grid">
       <div class="skill-card reveal">
-        <span class="icon">FULL-STACK</span>
-        <h3>Web Development</h3>
-        <p>Building responsive, end-to-end web applications — from frontend interfaces to backend APIs and databases.</p>
-        <div class="tags"><span>JavaScript</span><span>HTML/CSS</span></div>
+        <span class="icon">LANGUAGES</span>
+        <h3>Programming</h3>
+        <p>Core programming languages used across application development, backend systems, automation, and problem solving.</p>
+        <div class="tags"><span>Python</span><span>C++</span><span>JavaScript</span><span>PHP</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <span class="icon">BACKEND</span>
+        <h3>Backend Engineering</h3>
+        <p>Developing server-side applications, APIs, business logic, integrations, and database-driven systems.</p>
+        <div class="tags"><span>Node.js</span><span>Laravel</span><span>REST APIs</span><span>API Integration</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <span class="icon">FRONTEND</span>
+        <h3>Full-Stack Web</h3>
+        <p>Creating responsive interfaces and connecting them to reliable backend services and data layers.</p>
+        <div class="tags"><span>HTML/CSS</span><span>JavaScript</span><span>React</span><span>Vue</span><span>Bootstrap</span></div>
       </div>
       <div class="skill-card reveal">
         <span class="icon">AI / ML</span>
-        <h3>Machine Learning</h3>
-        <p>Designing and training models, working with data pipelines, and integrating AI features into real products.</p>
-        <div class="tags"><span>Python</span><span>Pandas</span><span>scikit-learn</span><span>NLP</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <span class="icon">CORE</span>
-        <h3>Languages</h3>
-        <p>Strong foundation in Python with working proficiency in C++ for performance-focused problem solving.</p>
-        <div class="tags"><span>Python</span><span>C++</span><span>Algorithms</span><span>OOP</span></div>
+        <h3>AI & Machine Learning</h3>
+        <p>Developing practical machine-learning and computer-vision applications for real-world use cases.</p>
+        <div class="tags"><span>PyTorch</span><span>OpenCV</span><span>YOLO</span><span>scikit-learn</span><span>Pandas</span><span>NLP</span></div>
       </div>
       <div class="skill-card reveal">
         <span class="icon">DATA</span>
-        <h3>Databases</h3>
-        <p>Designing schemas, writing optimized queries, and managing relational data at the core of applications.</p>
-        <div class="tags"><span>MySQL</span><span>SQL</span><span>Data Modeling</span></div>
-      </div>
-      <div class="skill-card reveal">
-        <span class="icon">GROWTH</span>
-        <h3>Sales Funnel Building</h3>
-        <p>Designing conversion-focused funnels — bridging the gap between engineering and business growth.</p>
-        <div class="tags"><span>Funnels</span><span>Conversion</span><span>Automation</span></div>
+        <h3>Databases & Data</h3>
+        <p>Designing structured data systems, working with relational databases, queries, and application data flows.</p>
+        <div class="tags"><span>MySQL</span><span>SQL</span><span>Data Modeling</span><span>Jupyter</span></div>
       </div>
       <div class="skill-card reveal">
         <span class="icon">TOOLS</span>
-        <h3>Workflow</h3>
-        <p>Version control, deployment pipelines, and the day-to-day tooling that keeps projects shipping smoothly.</p>
-        <div class="tags"><span>Git</span><span>REST APIs</span><span>Linux</span></div>
+        <h3>Development Tools</h3>
+        <p>Tools and workflows used for development, version control, debugging, deployment, and technical collaboration.</p>
+        <div class="tags"><span>Git</span><span>GitHub</span><span>Linux</span><span>VS Code</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <span class="icon">SAAS</span>
+        <h3>SaaS & Business Systems</h3>
+        <p>Building practical software for commercial workflows, business operations, automation, and data management.</p>
+        <div class="tags"><span>SaaS</span><span>ERP</span><span>Automation</span><span>Business Systems</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <span class="icon">WEB / CMS</span>
+        <h3>CMS & E-Commerce</h3>
+        <p>Additional experience delivering websites, content platforms, online stores, and business-facing web solutions.</p>
+        <div class="tags"><span>WordPress</span><span>WooCommerce</span><span>Shopify</span><span>Wix</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <span class="icon">GROWTH</span>
+        <h3>Funnels & Automation</h3>
+        <p>Additional experience with conversion-focused funnels, workflow automation, and digital business platforms.</p>
+        <div class="tags"><span>Systeme.io</span><span>ClickFunnels</span><span>Sales Funnels</span><span>SEO</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I BUILD -->
+  <section class="section" id="what-i-build">
+    <div class="section-head reveal">
+      <span class="section-num">05</span>
+      <h2 class="section-title">What I Build</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <span class="icon">01</span>
+        <h3>SaaS & Business Systems</h3>
+        <p>Business applications for workflows, operations, sales, inventory, data management, and day-to-day processes.</p>
+      </div>
+      <div class="skill-card reveal">
+        <span class="icon">02</span>
+        <h3>Backend & APIs</h3>
+        <p>REST APIs, integrations, backend services, database-driven applications, and data processing workflows.</p>
+      </div>
+      <div class="skill-card reveal">
+        <span class="icon">03</span>
+        <h3>AI & Computer Vision</h3>
+        <p>Machine-learning and computer-vision applications that process data, identify patterns, and produce intelligent results.</p>
+      </div>
+      <div class="skill-card reveal">
+        <span class="icon">04</span>
+        <h3>Full-Stack Applications</h3>
+        <p>End-to-end applications combining interfaces, backend logic, databases, APIs, and business functionality.</p>
       </div>
     </div>
   </section>
@@ -460,60 +602,199 @@
   <!-- PROJECTS -->
   <section class="section" id="projects">
     <div class="section-head reveal">
-      <span class="section-num">04</span>
-      <h2 class="section-title">Projects</h2>
+      <span class="section-num">06</span>
+      <h2 class="section-title">Featured Projects</h2>
       <div class="section-line"></div>
     </div>
+
+    <div class="project-filters reveal" aria-label="Project filters">
+      <button class="filter-btn active" data-filter="all">ALL</button>
+      <button class="filter-btn" data-filter="saas">SAAS</button>
+      <button class="filter-btn" data-filter="ai">AI / ML</button>
+      <button class="filter-btn" data-filter="backend">BACKEND</button>
+      <button class="filter-btn" data-filter="web">WEB</button>
+    </div>
+
     <div class="projects-grid">
 
-      <div class="project-card reveal">
+      <div class="project-card reveal" data-category="saas">
         <div class="inner">
           <div class="project-top">
-            <span class="project-tag">AI / ML</span>
-            <a href="https://movie-recommender-kaudtzmdzbpcesrf8kgfc3.streamlit.app/" class="project-link">↗</a>
+            <span class="project-tag">SaaS / Business Software</span>
           </div>
-          <h3>Movie Recommendation System</h3>
-          <p>An end-to-end AI/ML model that ingests raw data, trains a predictive model, and serves results through a lightweight API.A movie recommendation model.</p>
-          <div class="stack-row"><span>Python</span><span>scikit-learn</span><span>Jupyter Notbeook</span><span>API's</span></div>
+          <h3>SaaS Commercial ERP</h3>
+          <p>A business management platform designed around commercial workflows including sales, inventory, stock management, ledgers, journal vouchers, and related business operations.</p>
+          <div class="stack-row"><span>SaaS</span><span>ERP</span><span>Database</span><span>Business Systems</span></div>
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div class="project-card reveal" data-category="ai">
+        <div class="inner">
+          <div class="project-top">
+            <span class="project-tag">Computer Vision / AI</span>
+            <a href="https://github.com/ahmad149b/Automated-Traffic-Sign-Recognition" target="_blank" rel="noopener" class="project-link">↗</a>
+          </div>
+          <h3>Automated Traffic Sign Recognition System</h3>
+          <p>A real-time computer-vision system designed to detect and classify traffic signs from live video. Built with Python, OpenCV, PyTorch, and YOLO-based techniques, using the GTSRB dataset, with traffic-light state recognition and driver-oriented visualization.</p>
+          <div class="stack-row"><span>Python</span><span>OpenCV</span><span>PyTorch</span><span>YOLO</span><span>GTSRB</span></div>
+          <div class="project-actions">
+            <a href="https://github.com/ahmad149b/Automated-Traffic-Sign-Recognition" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-category="backend">
+        <div class="inner">
+          <div class="project-top">
+            <span class="project-tag">Backend / APIs</span>
+          </div>
+          <h3>API Connector & Data Fetcher</h3>
+          <p>A backend utility designed to connect external APIs, retrieve structured data, process responses, and make information available to other application components.</p>
+          <div class="stack-row"><span>Python</span><span>REST APIs</span><span>JSON</span><span>Data Processing</span></div>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-category="saas">
+        <div class="inner">
+          <div class="project-top">
+            <span class="project-tag">Full Stack / Business</span>
+          </div>
+          <h3>Business Portfolio & Web Customizing Dashboard</h3>
+          <p>A business-oriented web platform with a customizable dashboard for managing website content and presentation through a centralized interface.</p>
+          <div class="stack-row"><span>JavaScript</span><span>Backend</span><span>Database</span><span>Web</span></div>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-category="ai">
+        <div class="inner">
+          <div class="project-top">
+            <span class="project-tag">NLP / Machine Learning</span>
+            <a href="https://sentiments-analysis-s45ldbuemv8vifbnhzrgqu.streamlit.app/" target="_blank" rel="noopener" class="project-link">↗</a>
+          </div>
+          <h3>Sentiment Analyzer</h3>
+          <p>A machine-learning application that analyzes textual data and classifies sentiment, with support for individual inputs and spreadsheet-based sentiment analysis.</p>
+          <div class="stack-row"><span>Python</span><span>Pandas</span><span>scikit-learn</span><span>NLP</span></div>
+          <div class="project-actions">
+            <a href="https://sentiments-analysis-s45ldbuemv8vifbnhzrgqu.streamlit.app/" target="_blank" rel="noopener">Live Demo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-category="ai">
+        <div class="inner">
+          <div class="project-top">
+            <span class="project-tag">Machine Learning</span>
+            <a href="https://movie-recommender-kaudtzmdzbpcesrf8kgfc3.streamlit.app/" target="_blank" rel="noopener" class="project-link">↗</a>
+          </div>
+          <h3>Movie Recommendation System</h3>
+          <p>A machine-learning based recommendation application that processes movie data and generates recommendations based on selected content and learned similarities.</p>
+          <div class="stack-row"><span>Python</span><span>Pandas</span><span>scikit-learn</span><span>Streamlit</span></div>
+          <div class="project-actions">
+            <a href="https://movie-recommender-kaudtzmdzbpcesrf8kgfc3.streamlit.app/" target="_blank" rel="noopener">Live Demo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-category="ai">
+        <div class="inner">
+          <div class="project-top">
+            <span class="project-tag">NLP / Machine Learning</span>
+          </div>
+          <h3>Spam Email Classifier</h3>
+          <p>A machine-learning application for classifying email or text content into spam and legitimate categories using natural-language processing and supervised learning techniques.</p>
+          <div class="stack-row"><span>Python</span><span>NLP</span><span>Pandas</span><span>scikit-learn</span></div>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-category="web">
         <div class="inner">
           <div class="project-top">
             <span class="project-tag">Web Development</span>
-            <a href="https://ahmad149b.github.io/ecom-qasvah/" class="project-link">↗</a>
+            <a href="https://ahmad149b.github.io/ecom-qasvah/" target="_blank" rel="noopener" class="project-link">↗</a>
           </div>
-          <h3>E-Commerce Website</h3>
-          <p>A responsive e-commerce website with sleek design and advanced features.</p>
-          <div class="stack-row"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <h3>E-Commerce Platform</h3>
+          <p>A responsive e-commerce platform designed around product browsing, structured product data, online purchasing workflows, and a user-friendly shopping experience.</p>
+          <div class="stack-row"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>E-Commerce</span></div>
+          <div class="project-actions">
+            <a href="https://ahmad149b.github.io/ecom-qasvah/" target="_blank" rel="noopener">Live Demo ↗</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div class="project-card reveal" data-category="web">
         <div class="inner">
           <div class="project-top">
-            <span class="project-tag">Computer Vision</span>
-            <a href="https://github.com/ahmad149b/Automated-Traffic-Sign-Recognition" class="project-link">↗</a>
+            <span class="project-tag">Additional Project</span>
           </div>
-          <h3>Automated Traffic Sign Recognition System</h3>
-          <p>This project develops an Automated Traffic Sign Recognition System using Computer Vision, OpenCV, and CNNs to detect traffic signs and traffic light states in real time from live video. Trained on the GTSRB dataset, it improves driver awareness with high accuracy and reliability.</p>
-          <div class="stack-row"><span>Python</span><span>Automation</span><span>CNN</span><span>ultralytics</span></div>
+          <h3>Todo Tasks Software</h3>
+          <p>A task-management application focused on organizing, tracking, and managing daily tasks through a simple software workflow.</p>
+          <div class="stack-row"><span>Web Development</span><span>Database</span></div>
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div class="project-card reveal" data-category="web">
         <div class="inner">
           <div class="project-top">
-            <span class="project-tag">AI/ML</span>
-            <a href="https://sentiments-analysis-s45ldbuemv8vifbnhzrgqu.streamlit.app/" class="project-link">↗</a>
+            <span class="project-tag">Additional Project</span>
           </div>
-          <h3>Sentiments Analyzer</h3>
-          <p>An AI/ML model trained on raw datasets of different sentiments.It predicts sentiments on a high accuracy and shows results.An additional option for uploading excel files for sentiment analysis also added.</p>
-          <div class="stack-row"><span>Jupyter Notebook</span><span>Python</span><span>Pandas</span><span>API's</span></div>
+          <h3>Slot Machine</h3>
+          <p>An interactive software project focused on implementing game-style logic, state handling, and user interaction.</p>
+          <div class="stack-row"><span>Programming</span><span>Logic</span><span>UI</span></div>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ENGINEERING APPROACH -->
+  <section class="section" id="approach">
+    <div class="section-head reveal">
+      <span class="section-num">07</span>
+      <h2 class="section-title">How I Work</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="process-grid">
+      <div class="process-card reveal">
+        <div class="process-num">01</div>
+        <h3>Understand</h3>
+        <p>Break down the problem, requirements, users, constraints, and expected outcome.</p>
+      </div>
+      <div class="process-card reveal">
+        <div class="process-num">02</div>
+        <h3>Design</h3>
+        <p>Define the architecture, data flow, APIs, database structure, and technical approach.</p>
+      </div>
+      <div class="process-card reveal">
+        <div class="process-num">03</div>
+        <h3>Build</h3>
+        <p>Develop the system iteratively with maintainable code and practical engineering decisions.</p>
+      </div>
+      <div class="process-card reveal">
+        <div class="process-num">04</div>
+        <h3>Test</h3>
+        <p>Validate functionality, handle edge cases, debug issues, and improve reliability.</p>
+      </div>
+      <div class="process-card reveal">
+        <div class="process-num">05</div>
+        <h3>Ship & Improve</h3>
+        <p>Deploy the solution, evaluate real-world behavior, and continuously improve it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="section-head reveal">
+      <span class="section-num">08</span>
+      <h2 class="section-title">Education</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="education-card reveal">
+      <div>
+        <h3>Bachelor of Science in Software Engineering</h3>
+        <p>Riphah International University, Faisalabad</p>
+      </div>
+      <div class="edu-date">2022 — 2026</div>
     </div>
   </section>
 
@@ -521,9 +802,9 @@
   <section class="section" id="contact">
     <div class="contact-wrap">
       <div class="contact-left reveal">
-        <span class="section-num">05 — Contact</span>
-        <h2>Let's build<br>something <span class="grad" style="background:linear-gradient(100deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;">great</span> together.</h2>
-        <p>I'm currently open to new opportunities. Whether you have a question, a role, or a project in mind, my inbox is open.</p>
+        <span class="section-num">09 — Contact</span>
+        <h2>Let's build<br>something <span class="grad" style="background:linear-gradient(100deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;">useful</span> together.</h2>
+        <p>I'm open to Software Engineering opportunities, technical collaborations, and interesting projects involving software development, SaaS, backend systems, AI/ML, and automation.</p>
         <div class="contact-links">
           <a href="mailto:ahmad149b@gmail.com"><span class="arrow">→</span> ahmad149b@gmail.com</a>
           <a href="https://linkedin.com/in/ahmadmustafa149" target="_blank" rel="noopener"><span class="arrow">→</span> LinkedIn</a>
@@ -552,7 +833,7 @@
 </div>
 
 <footer>
-  <div>© Ahmad Mustafa</div>
+  <div>© <span id="year"></span> Ahmad Mustafa · Software Engineer</div>
   <div class="socials">
     <a href="https://github.com/ahmad149b" target="_blank" rel="noopener">GitHub</a>
     <a href="https://linkedin.com/in/ahmadmustafa149" target="_blank" rel="noopener">LinkedIn</a>
@@ -573,7 +854,7 @@ if (year) {
   navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMenu.classList.remove('open')));
 
   // Typed role effect
-  const roles = ["Full-Stack Developer", "AI / ML Skilled", "Python Developer", "Sales Funnel Builder","E-Commerce Leader"];
+  const roles = ["Full-Stack Engineer", "Backend Developer", "SaaS Developer", "AI / ML Developer", "Python Developer"];
   const typedEl = document.getElementById('typed');
   let rIdx = 0, cIdx = 0, deleting = false;
 
@@ -591,6 +872,22 @@ if (year) {
     setTimeout(typeLoop, deleting ? 35 : 65);
   }
   typeLoop();
+
+
+  // Project filters
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card[data-category]');
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      const filter = button.dataset.filter;
+      projectCards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.classList.toggle('hidden', !show);
+      });
+    });
+  });
 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
